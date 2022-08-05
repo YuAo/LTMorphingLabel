@@ -182,6 +182,12 @@ typealias LTMorphingSkipFramesClosure =
         displayLink?.remove(from: .current, forMode: RunLoop.Mode.common)
         displayLink?.invalidate()
         displayLink = nil
+        
+        startClosures.removeAll()
+        effectClosures.removeAll()
+        drawingClosures.removeAll()
+        progressClosures.removeAll()
+        skipFramesClosures.removeAll()
     }
     
     open var textAttributes: [NSAttributedString.Key: Any]? {
